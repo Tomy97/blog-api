@@ -22,6 +22,11 @@ export class NavbarComponent {
       title: 'Albumes',
       fragment: 'albumes',
       link: 'albumes'
+    },
+    {
+      title: 'Todos',
+      fragment: 'todos',
+      link: 'todos'
     }
   ];
   constructor(public route: ActivatedRoute) {}
