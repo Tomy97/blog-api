@@ -7,7 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { MatTableModule } from '@angular/material/table';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component'
+import { FooterComponent } from './components/footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
   imports: [
@@ -15,6 +16,7 @@ import { FooterComponent } from './components/footer/footer.component'
     AppRoutingModule,
     BrowserAnimationsModule,
     MatTableModule,
+    NgbModule,
   ],
   exports: [MatTableModule],
   providers: [],

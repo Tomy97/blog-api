@@ -1,15 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+export class NavbarComponent {
+  Links = [
+    {
+      title: 'Usuario',
+      fragment: 'usuario',
+    },
+    {
+      title: 'Posteos',
+      fragment: 'posteos',
+    },
+    {
+      title: 'Albumes',
+      fragment: 'albumes',
+    }
+  ];
+  constructor(public route: ActivatedRoute) {}
 }
