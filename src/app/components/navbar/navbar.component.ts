@@ -11,14 +11,17 @@ export class NavbarComponent {
     {
       title: 'Usuario',
       fragment: 'usuario',
+      link: 'usuarios'
     },
     {
       title: 'Posteos',
       fragment: 'posteos',
+      link: 'post'
     },
     {
       title: 'Albumes',
       fragment: 'albumes',
+      link: 'albumes'
     }
   ];
   constructor(public route: ActivatedRoute) {}

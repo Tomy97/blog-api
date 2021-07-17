@@ -1,5 +1,5 @@
 <ul ngbNav [activeId]="route.fragment | async" class="nav-tabs d-flex justify-content-end">
     <li [ngbNavItem]="link.fragment" *ngFor="let link of Links">
-        <a ngbNavLink routerLink="." [fragment]="link.fragment">{{ link.title }}</a>
+        <a ngbNavLink routerLink="{{ link.link }}">{{ link.title }}</a>
     </li>
 </ul>
