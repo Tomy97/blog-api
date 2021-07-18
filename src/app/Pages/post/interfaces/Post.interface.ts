@@ -1,6 +1,6 @@
 export interface Posts {
-    id: number,
-    title: string,
-    email: string,
-    comments: string,
+    userId: number;
+    id:     number;
+    title:  string;
+    body:   string;
 }
