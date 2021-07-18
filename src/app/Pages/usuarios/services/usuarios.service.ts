@@ -8,7 +8,7 @@ import { Usuarios } from './../interfaces/Usuarios.interfaces';
 })
 export class UsuariosService {
   private Url: string = 'https://jsonplaceholder.typicode.com';
-  public Usuarios: Usuarios[] = [];
+  Usuarios: Usuarios[] = [];
 
   constructor(private http: HttpClient) {  }
   getUsuarios() {
