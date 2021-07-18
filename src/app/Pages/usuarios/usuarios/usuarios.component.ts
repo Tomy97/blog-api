@@ -1,3 +1,5 @@
+import { Usuarios } from './../interfaces/Usuarios.interfaces';
+import { UsuariosService } from './../services/usuarios.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.css']
 })
-export class UsuariosComponent implements OnInit {
+export class UsuariosComponent {
+  Usuarios: Usuarios[] = [];
+  
+  constructor(private UsuariosService: UsuariosService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  test() {
+    this.UsuariosService;
+    
+   }
 }
