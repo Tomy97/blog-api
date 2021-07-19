@@ -9,8 +9,8 @@ import { AlbumesFotos } from '../interfaces/AlbumesFotos.interfaces';
 export class AlbumesService {
 
   private Url: string = 'https://jsonplaceholder.typicode.com';
-  AlbumesFotos: Array<AlbumesFotos> = [];
   Albumes: Array<Albumes> = [];
+  AlbumesF: Array<AlbumesFotos> = [];
 
   constructor(private http: HttpClient) { }
   
@@ -18,15 +18,13 @@ export class AlbumesService {
     this.http.get<Albumes[]>(`${this.Url}/albums`)
       .subscribe(albumes => {
         this.Albumes = albumes;
-        console.log(this.Albumes);
       });
   }
 
-  getAlbumesFotos( albumId: number ) {
+  getAlbumesFotos( albumId: number = 1) {
     this.http.get<AlbumesFotos[]>(`${ this.Url }/albums/${ albumId }/photos?limit=10`)
-      .subscribe(albumesFotos => {
-        this.AlbumesFotos = albumesFotos;
-        console.log(this.Albumes);
+      .subscribe(albumesF => {
+        this.AlbumesF = albumesF;
       });
   }
 }

@@ -8,15 +8,15 @@ import { Component } from '@angular/core'
 })
 export class AlbumesComponent {
   constructor(private AlbumesService: AlbumesService) {
-    this.AlbumesService.getAlbumes()
-    // this.AlbumesService.getAlbumesFotos()
+    this.AlbumesService.getAlbumes();
+    this.AlbumesService.getAlbumesFotos();
   }
 
   get Albumes() {
     return this.AlbumesService.Albumes
   }
 
-  get AlbumesFotos() {
-    return this.AlbumesService.AlbumesFotos
+  get AlbumesF() {
+    return this.AlbumesService.AlbumesF
   }
 }
