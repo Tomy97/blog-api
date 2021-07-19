@@ -1,3 +1,4 @@
+import { PosteosService } from './../services/posteos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './posteos.component.html',
   styleUrls: ['./posteos.component.css']
 })
-export class PosteosComponent implements OnInit {
+export class PosteosComponent  {
+  constructor(private PosteosService: PosteosService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get Posteos() {
+    return this.PosteosService.Posteos;
   }
-
 }
