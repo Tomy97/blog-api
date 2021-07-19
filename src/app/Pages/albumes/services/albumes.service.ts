@@ -1,6 +1,7 @@
-import { Album } from './../interfaces/Albumes.interfaces';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Albumes } from '../interfaces/Albumes.interfaces';
+import { AlbumesFotos } from '../interfaces/AlbumesFotos.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +9,24 @@ import { Injectable } from '@angular/core';
 export class AlbumesService {
 
   private Url: string = 'https://jsonplaceholder.typicode.com';
-  Albumes: Array<Album> = [];
-  AlbumesFotos: Array<Album> = [];
+  AlbumesFotos: Array<AlbumesFotos> = [];
+  Albumes: Array<Albumes> = [];
 
   constructor(private http: HttpClient) { }
+  
   getAlbumes() {
-    this.http.get<Album[]>(`${this.Url}/https://jsonplaceholder.typicode.com/albums/1/photos?&_limit=10`)
-      .subscribe(albumes => this.Albumes = albumes  );
+    this.http.get<Albumes[]>(`${this.Url}/albums`)
+      .subscribe(albumes => {
+        this.Albumes = albumes;
+        console.log(this.Albumes);
+      });
+  }
+
+  getAlbumesFotos( albumId: number ) {
+    this.http.get<AlbumesFotos[]>(`${ this.Url }/albums/${ albumId }/photos?limit=10`)
+      .subscribe(albumesFotos => {
+        this.AlbumesFotos = albumesFotos;
+        console.log(this.Albumes);
+      });
   }
 }

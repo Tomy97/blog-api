@@ -20,7 +20,6 @@ import { TodosModule } from './Pages/todos/todos.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatTableModule,
     NgbModule,
     SharedModule,
     UsuariosModule,
@@ -28,7 +27,6 @@ import { TodosModule } from './Pages/todos/todos.module';
     AlbumesModule,
     PostModule
   ],
-  exports: [MatTableModule],
   providers: [],
   bootstrap: [AppComponent],
 })
