@@ -8,5 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent {
   autor: string = 'Tomas Pandullo'
   year = new Date()
-  anio = new Date(this.year.toLocaleDateString())
+  fecha = new Date(this.year.toLocaleDateString())
 }

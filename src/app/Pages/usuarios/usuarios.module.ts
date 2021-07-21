@@ -1,9 +1,10 @@
+import { UserRoutingModule } from './user-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { SharedModule } from 'src/app/shared/shared.module';
 import { HttpClientModule } from '@angular/common/http'
 
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http'
     CommonModule,
     SharedModule,
     HttpClientModule,
+    UserRoutingModule
   ]
 })
 export class UsuariosModule { }

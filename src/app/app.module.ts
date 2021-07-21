@@ -1,3 +1,4 @@
+import { AlbumesRoutingModule } from './Pages/albumes/albumes-routing.module';
 import { PostModule } from './Pages/post/post.module';
 import { AlbumesModule } from './Pages/albumes/albumes.module';
 import { UsuariosModule } from './Pages/usuarios/usuarios.module';
@@ -14,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SharedModule } from './shared/shared.module'
 import { TodosModule } from './Pages/todos/todos.module';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent, NavbarComponent, FooterComponent],
   imports: [
@@ -22,10 +24,9 @@ import { TodosModule } from './Pages/todos/todos.module';
     BrowserAnimationsModule,
     NgbModule,
     SharedModule,
-    UsuariosModule,
     TodosModule,
-    AlbumesModule,
-    PostModule
+    PostModule,
+    AlbumesRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],
