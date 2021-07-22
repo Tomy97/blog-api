@@ -22,7 +22,7 @@ export class AlbumesService {
   }
 
   getAlbumesFotos( albumId: number = 1) {
-    this.http.get<AlbumesFotos[]>(`${ this.Url }/albums/${ albumId }/photos?limit=10`)
+    this.http.get<AlbumesFotos[]>(`${ this.Url }/albums/${ albumId }/photos`)
       .subscribe(albumesF => {
         this.AlbumesF = albumesF;
       });

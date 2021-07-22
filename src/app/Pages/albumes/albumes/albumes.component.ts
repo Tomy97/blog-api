@@ -7,6 +7,7 @@ import { Component } from '@angular/core'
   styleUrls: ['./albumes.component.css'],
 })
 export class AlbumesComponent {
+  displayedColumns: string[] = [ 'Albumes', 'Ver Galeria', 'Ver Detalle del Usuario']
   constructor(private AlbumesService: AlbumesService) {
     this.AlbumesService.getAlbumes();
     this.AlbumesService.getAlbumesFotos();

@@ -6,9 +6,10 @@ import { HttpClientModule } from '@angular/common/http'
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+
 @NgModule({
   declarations: [
-    UsuariosComponent
+    UsuariosComponent,
   ],
   imports: [
     CommonModule,

@@ -1,11 +1,19 @@
-<h2>
-    Galeria de Fotos
+<h2 class="text-center">
+  Galeria de Fotos
 </h2>
 
 <div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            
-        </div>
-    </div>
+  <div class="col-md-4" *ngFor="let af of AlbumesF">
+    <mat-card class="example-card">
+      <img mat-card-image [src]="af.thumbnailUrl" />
+      <mat-card-content>
+        <p>
+          {{ af.title }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions  class="d-flex justify-content-end">
+        <button mat-stroked-button color="warn">Eliminar Foto</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

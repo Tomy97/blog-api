@@ -7,6 +7,7 @@ import { PosteosService } from './../services/posteos.service';
   styleUrls: ['./posteos.component.css']
 })
 export class PosteosComponent  {
+  displayedColumns: string[] = [ 'Titulo', 'Ver Detalle del Usuario', 'Ver Comentarios' ];
   constructor(private PosteosService: PosteosService) {
     this.PosteosService.getPosteosComments();
     this.PosteosService.getPosteosUsers();

@@ -8,6 +8,7 @@ import { UsuariosService } from './../services/usuarios.service';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent {
+  displayedColumns: string[] = [ 'UserName','Nombre y Apellido','Sitio Web','Ver Posteos', 'Ver Albumes', 'Ver los Todos' ]
   Title: string = 'Datos de los Usuarios';
   panelOpenState = false;
   userId: number = 1

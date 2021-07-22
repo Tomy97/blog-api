@@ -1,38 +1,32 @@
 <h2 class="text-center">
-    Posteos
+  Posteos
 </h2>
 
 <app-buscar-titulo></app-buscar-titulo>
 
-<table class='table table-striped'>
-    <thead>
-        <tr>
-            <th class="text-center">
-               Titulo
-            </th>
-            <th>
+<table mat-table [dataSource]="PostsU" class="mat-elevation-z8">
+  <ng-container matColumnDef="Titulo">
+    <th mat-header-cell *matHeaderCellDef class="text-center">Titulo</th>
+    <td mat-cell *matCellDef="let p">{{ p.title }}</td>
+  </ng-container>
 
-            </th>
-            <th>
+  <ng-container matColumnDef="Ver Detalle del Usuario">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let u" class="text-center">
+      <button mat-flat-button class="btn btn-success">
+        Ver Detalle del Usuario
+      </button>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="Ver Comentarios">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let u" class="text-center">
+      <button mat-flat-button class="btn btn-dark">
+        Ver Comentarios
+      </button>
+    </td>
+  </ng-container>
 
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let p of PostsU">
-            <td class="text-center">
-                {{p.title}}
-            </td>
-            <td class="text-center">
-              <button class="btn btn-success">
-                 Ver Detalle del Usuario
-              </button>
-            </td>
-            <td class="text-center">
-                <button class="btn btn-dark">
-                  Ver Comentarios
-                </button>
-            </td>
-        </tr>
-    </tbody>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>

@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './modal-date-users.component.html',
   styleUrls: ['./modal-date-users.component.css']
 })
-export class ModalDateUsersComponent implements OnInit {
+export class ModalDateUsersComponent {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

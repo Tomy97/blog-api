@@ -4,8 +4,9 @@ import { RouterModule, Routes } from '@angular/router'
 import { PosteosComponent } from '../post/posteos/posteos.component'
 
 const routes: Routes = [
-  { path: '', component: UsuariosComponent },
-  { path: ':id/posts', component: PosteosComponent }
+  { path: 'usuarios', component: UsuariosComponent },
+  { path: ':id/posts', component: PosteosComponent },
+  { path: '', component: UsuariosComponent }
 ]
 
 @NgModule({

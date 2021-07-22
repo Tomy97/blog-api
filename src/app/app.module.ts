@@ -18,7 +18,7 @@ import { ModalDateUsersComponent } from './components/modal-date-users/modal-dat
 import { ListaCommentariosComponent } from './components/lista-commentarios/lista-commentarios.component';
 import { GaleryPhotosComponent } from './components/galery-photos/galery-photos.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent, ModalDateUsersComponent],
+  declarations: [AppComponent, NavbarComponent, FooterComponent ],
   imports: [
     BrowserModule,
     AppRoutingModule,
