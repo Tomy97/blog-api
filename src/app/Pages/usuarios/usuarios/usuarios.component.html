@@ -20,8 +20,7 @@
     <ng-container matColumnDef="Ver Posteos">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let u" class='text-center'>
-        
-        <button mat-flat-button routerLink='/usuarios/{{u.id}}' class='btn btn-dark' >
+        <button mat-flat-button routerLink='{{u.id}}/posts' class='btn btn-dark' >
           Ver Posteos
         </button>
       </td>
@@ -37,7 +36,7 @@
     <ng-container matColumnDef="Ver los Todos">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let u" class='text-center'>
-        <button mat-flat-button class='btn btn-info'>
+        <button mat-flat-button class='btn btn-success'>
           Ver los Todos
         </button>
       </td>

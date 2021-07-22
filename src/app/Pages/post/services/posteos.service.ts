@@ -19,7 +19,7 @@ export class PosteosService {
       .subscribe( posteosCom => this.PostsC = posteosCom );
   }
 
-  getPosteosUsers( userId : number = 1 ) {
+  getPosteosUsers( userId : number ) {
     this.http.get<PostUsers[]>(`${this.Url}user/${ userId }/posts`)
       .subscribe(postsUsers => this.PostsU = postsUsers );
   }
