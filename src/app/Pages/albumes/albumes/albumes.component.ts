@@ -16,7 +16,4 @@ export class AlbumesComponent {
     return this.AlbumesService.Albumes
   }
 
-  get AlbumesF() {
-    return this.AlbumesService.AlbumesF
-  }
 }

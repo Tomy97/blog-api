@@ -5,6 +5,9 @@
 <table class="table table-hover table-bordered">
   <thead>
     <tr>
+      <th>
+        Ids
+      </th>
       <th class="text-center">
         Username
       </th>
@@ -34,7 +37,7 @@
         {{ user.website }}
       </td>
       <td class="text-center">
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)='getUsuariosId()' >
           Ver Posteos
         </button>
       </td>

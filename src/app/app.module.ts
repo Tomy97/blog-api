@@ -9,15 +9,16 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { MatTableModule } from '@angular/material/table';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { SharedModule } from './shared/shared.module'
 import { TodosModule } from './Pages/todos/todos.module';
-import { FormsModule } from '@angular/forms';
+import { ModalDateUsersComponent } from './components/modal-date-users/modal-date-users.component';
+import { ListaCommentariosComponent } from './components/lista-commentarios/lista-commentarios.component';
+import { GaleryPhotosComponent } from './components/galery-photos/galery-photos.component';
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, FooterComponent],
+  declarations: [AppComponent, NavbarComponent, FooterComponent, ModalDateUsersComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

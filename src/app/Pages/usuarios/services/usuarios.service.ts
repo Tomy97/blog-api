@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { Usuario } from '../interfaces/Usuario.interfaces';
 
@@ -11,8 +12,16 @@ export class UsuariosService {
   Usuarios: Array<Usuario> = [] ;
 
   constructor(private http: HttpClient) { }
-  getUsuarios() {
-    this.http.get<Usuario[]>(`${this.Url}/users?&_limit=10`)
+  
+  getUsuarios( ) {
+    const url = `${ this.Url }/users?&_limit=10`
+    this.http.get<Usuario[]>( url )
+      .subscribe( usuarios => this.Usuarios = usuarios  );
+  }
+
+  getUsuariosId(userId: number) {
+    const url = `${ this.Url }/users/${ userId }?&_limit=10`
+    this.http.get<Usuario[]>( url )
       .subscribe(usuarios => this.Usuarios = usuarios  );
   }
 }

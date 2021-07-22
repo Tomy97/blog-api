@@ -14,13 +14,14 @@ export class PosteosService {
 
   constructor( private http: HttpClient ) { }
   
-  getPosteosComments( postId : number = 2 ) {
+  getPosteosComments( postId : number = 1 ) {
     this.http.get<PostComments[]>(`${this.Url}posts/${ postId }/comments`)
       .subscribe( posteosCom => this.PostsC = posteosCom );
   }
 
-  getPosteosUsers( userId : number = 2 ) {
+  getPosteosUsers( userId : number = 1 ) {
     this.http.get<PostUsers[]>(`${this.Url}user/${ userId }/posts`)
       .subscribe(postsUsers => this.PostsU = postsUsers );
   }
+
 }
