@@ -1,5 +1,5 @@
+import { Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 
 import { PostComments } from './../interfaces/PostsComments.interface';
 import { PostUsers } from './../interfaces/PostUsers.interface';
@@ -9,19 +9,24 @@ import { PostUsers } from './../interfaces/PostUsers.interface';
 export class PosteosService {
   private Url: string = 'https://jsonplaceholder.typicode.com/';
 
-  PostsC: Array<PostComments> = [] ;
+ @Output() PostsC: Array<PostComments> = [] ;
   PostsU: Array<PostUsers> = [];
 
   constructor( private http: HttpClient ) { }
   
-  getPosteosComments( postId : number = 1 ) {
+  getPosteosComments( postId : number ) {
     this.http.get<PostComments[]>(`${this.Url}posts/${ postId }/comments`)
       .subscribe( posteosCom => this.PostsC = posteosCom );
   }
 
-  getPosteosUsers( userId : number ) {
-    this.http.get<PostUsers[]>(`${this.Url}user/${ userId }/posts`)
-      .subscribe(postsUsers => this.PostsU = postsUsers );
+  getPosteos(userId?: number) {
+    if (userId) {
+     this.http.get<PostUsers[]>(`${this.Url}user/${ userId }/posts`)
+      .subscribe(postsUsers => this.PostsU = postsUsers ); 
+    } else {
+      this.http.get<PostUsers[]>(`${this.Url}posts`)
+      .subscribe(posts => this.PostsU = posts ); 
+    }
   }
 
 }

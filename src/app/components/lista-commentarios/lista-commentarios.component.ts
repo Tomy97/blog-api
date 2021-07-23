@@ -1,15 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
+import { PosteosService } from './../../Pages/post/services/posteos.service';
 @Component({
   selector: 'app-lista-commentarios',
   templateUrl: './lista-commentarios.component.html',
   styleUrls: ['./lista-commentarios.component.css']
 })
-export class ListaCommentariosComponent implements OnInit {
+export class ListaCommentariosComponent {
+  postId: number = 1;
+  
+  constructor(
+    private PosteosService: PosteosService,
+    private route: ActivatedRoute
+  ) {
+    this.route.params.subscribe(params => {
+      this.postId = params['id'];
+    });  
+  }
 
-  constructor() { }
+  get PostsC() {
+   return this.PosteosService.PostsC;
+  }
+  
 
-  ngOnInit(): void {
+  get getPosteosComments() {
+    return this.PosteosService.getPosteosComments(this.postId);
+  }
+
+  viewComments() {
+    
   }
 
 }
