@@ -1,6 +1,14 @@
 <h2 mat-dialog-title class="text-center">Detalles del Usuario</h2>
-<mat-dialog-content>
-    
+<mat-dialog-content *ngFor="let u of Usuarios">
+    <p>
+      Nombre: {{ u.name }}
+    </p>
+    <p>
+      User Name: {{ u.username }}
+    </p>
+    <p>
+      Email: {{ u.email }}
+    </p>
 </mat-dialog-content>
 <mat-dialog-actions>
   <button mat-button mat-dialog-close>Cancel</button>

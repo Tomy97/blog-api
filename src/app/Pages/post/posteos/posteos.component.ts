@@ -1,3 +1,4 @@
+import { ModalDateUsersComponent } from './../../../components/modal-date-users/modal-date-users.component';
 import { Component, Input, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,7 +20,8 @@ export class PosteosComponent {
     'Ver Comentarios'
   ];
   userId: number;
-  
+  postId: number;
+
   constructor(
     private PosteosService: PosteosService,
     private route: ActivatedRoute,
@@ -31,6 +33,7 @@ export class PosteosComponent {
     } else {
       this.PosteosService.getPosteos();
     }
+    this.postId = this.route.snapshot.params['id'];
   }
 
   get PostsC() {
@@ -45,10 +48,15 @@ export class PosteosComponent {
       const dialogRef = this.dialog.open(ListaCommentariosComponent, {
         width: '500px',
       });
-    console.log(dialogRef);
+    console.log(this.postId);
     
   }
   
-
+  viewUserData() {
+    console.log(this.userId);
+      const dialogRef = this.dialog.open(ModalDateUsersComponent, {
+        width: '500px',
+      });
+  }
 
 }

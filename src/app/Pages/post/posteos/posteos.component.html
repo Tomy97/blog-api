@@ -18,7 +18,7 @@
   <ng-container matColumnDef="Ver Detalle del Usuario">
     <th mat-header-cell *matHeaderCellDef></th>
     <td mat-cell *matCellDef="let u" class="text-center">
-      <button mat-flat-button class="btn btn-success">
+      <button mat-flat-button class="btn btn-success" (click)="viewUserData()" >
         Ver Detalle del Usuario
       </button>
     </td>
